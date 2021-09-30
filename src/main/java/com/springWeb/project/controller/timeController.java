@@ -36,7 +36,7 @@ public class timeController {
 		return Time_Service.addTime(time);
 	}
 	
-	@DeleteMapping("/time/excluir_time/{id_time}") //END-POINT 03 -> DELETE -> Apaga um time pelo id -> FUNCIONANDO
+	@DeleteMapping("/time/excluir_time/{id}") //END-POINT 03 -> DELETE -> Apaga um time pelo id -> FUNCIONANDO
 	public Time excluir_time(@PathVariable Long id) {
 		if(Time_Service.get_time(id) == null){//Se não existir registro com esse id, return null
             return null;
@@ -46,7 +46,7 @@ public class timeController {
         return aux;//EXIBE O TIME QUE ACABOU DE SER DELETADO
 	}
 	
-    @PutMapping("/time/update_time/{id_time}") //END-POINT 04 -> PUT -> Altera os valores de um time pelo id -> FUNCIONANDO
+    @PutMapping("/time/update_time/{id}") //END-POINT 04 -> PUT -> Altera os valores de um time pelo id -> FUNCIONANDO
     public Time update_time(@PathVariable Long id,@RequestBody Time time){
     	if(Time_Service.get_time(id) == null){//Se não existir registro com esse id, return null
             return null;
@@ -58,7 +58,7 @@ public class timeController {
     // -------------------------------------- FUNÇÕES PARA OS JOGADORES ---------------------------------------------------
     
     
-    @GetMapping("/time/listar_jogadores/{id_time}") //END-POINT 05 -> GET -> Lista os usuários pertencentes ao time -> FUNCIONANDO
+    @GetMapping("/time/listar_jogadores/{id}") //END-POINT 05 -> GET -> Lista os usuários pertencentes ao time -> FUNCIONANDO
     public List<Jogadores> listar_jogadores(@PathVariable Long id){
     	if(Time_Service.get_time(id) == null) {
     		return null;
@@ -67,7 +67,7 @@ public class timeController {
     	}
     }   
     
-    @PostMapping("/time/{id_time}/add_jogador") //END-POINT 06 -> POST -> Cria um novo jogador e o adiciona ao time -> FUNCIONANDO
+    @PostMapping("/time/{id}/add_jogador") //END-POINT 06 -> POST -> Cria um novo jogador e o adiciona ao time -> FUNCIONANDO
     @ResponseStatus(HttpStatus.CREATED)//Faz com que o codigo http retornado seja o 201(ok e objeto criado) e não o 200(ok)
     public Jogadores add_jogador(@PathVariable Long id, @RequestBody Jogadores jogador) {
     	if(Time_Service.get_time(id) == null) {// Se não existir registro com esse id, return null
@@ -79,7 +79,7 @@ public class timeController {
     	return jogador;
     }
     
-    @DeleteMapping("/time/{id_jogador}/remove_jogador")//END-POINT 07 -> DELETE -> Apaga um registro de jogador do time de id = {id}
+    @DeleteMapping("/time/{id}/remove_jogador")//END-POINT 07 -> DELETE -> Apaga um registro de jogador do time de id = {id}
     public Jogadores deleteJogador(@PathVariable Long id){
         if(Jogador_Service.get_Jogador(id) == null){//Se não existir registro com esse id, return null
             return null;
@@ -89,7 +89,7 @@ public class timeController {
         return aux;//EXIBE O JOGADOR QUE ACABOU DE SER DELETADO
     }
     
-    @PutMapping("/time/{id_jogador}/alterar_jogador")//END-POINT 08 -> PUT -> Atualiza os dados de um jogador pertencente ao time de id = {id}
+    @PutMapping("/time/{id}/alterar_jogador")//END-POINT 08 -> PUT -> Atualiza os dados de um jogador pertencente ao time de id = {id}
     public Jogadores putJogador(@PathVariable Long id, @RequestBody Jogadores jogador){
         if(Jogador_Service.get_Jogador(id) == null){//Se não existir registro com esse id, return null
              return null;

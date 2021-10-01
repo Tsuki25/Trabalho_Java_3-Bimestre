@@ -15,10 +15,10 @@ GET			    | /time					               | Retorna todos os times existentes
 POST			  |/time/criar				           | Criar um novo time
 DELETE		  |/time/excluir_time/{id}		   | Apaga um time pelo id
 PUT			    |/time/update_time/{id}		     | Altera os valores de um time pelo id
-GET			    |/time/listar_jogadores /{id}  | Lista os usuários pertencentes ao time 
+GET			    |/time/listar_jogadores/{id}  | Lista os usuários pertencentes ao time 
 POST			  |/time/{id}/add_jogador		     | Cadastra um novo usuário para um time
 DELETE		  |/time/{id}/remove_jogador 	   | Apaga um usuário pertencente ao time
-PUT			    |/time/{id}/alterar_Jogador 	 | Altera os dados cadastrais de um usuário
+PUT			    |/time/{id}/alterar_jogador 	 | Altera os dados cadastrais de um usuário
 
 ### JSONS
 * Time

@@ -32,11 +32,11 @@ PUT			    |/time/{id}/alterar_jogador 	 | Altera os dados cadastrais de um usuá
             "email":"kaori.String@gmail.com",
             "senha": "1234"
         },
-		{
+	{
             "nome":"Tsuki",
             "email":"tsuki.String@gmail.com",
             "senha": "7896"
-}
+	}
     ]
 }
 ~~~
